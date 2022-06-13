@@ -1,22 +1,28 @@
-/*****************************************************************************
- STEPPER MOTOR FULL STEP DRIVE WITH SINGLE PHASE (ONE STEP WITH SINGLE COIL ENERGISING)
+Created By -> Keerthan Suvarna
+
+********************************************************************************************************************************************************
+1. STEPPER MOTOR FULL STEP DRIVE WITH SINGLE PHASE (ONE STEP WITH SINGLE COIL ENERGISING)
+1. STEPPER MOTOR FULL STEP DRIVE WITH TWO PHASE (ONE STEP WITH TWO COIL ENERGISING)
  
- Created By Keerthan Suvarna - 11-06-2022, 10.33PM
 
  Simple illustration with out using library function
- Here ULN2003AN driver used to driv motor.
+ Here ULN2003AN driver used to drive the motor.
  Use external 5V to power ULN2003 board as it draws around 300mA current even if the motor is in steady state.
- Connect Arduino ground to the External ground to avoid potential difference.
+ Connect Arduino GND to the External Supply GND to avoid potential differences.
 
- Note:
- 1. One full rotation = 32 single steps
- 2. One Step = 11.25 degree i.e, 32x11.25=360 degree
- 3. One full rotation inclusive of gear set-up = 2037 steps (63.65:1 gear rayio---->63.65 x 32 = 2036.8)
- 4. One Step = 0.176 degree (i.e, 0.176 x 2036.8 = 360)
- ################################Code tested on ARDUINO UNO################################################
-******************************************************************************/
 
-/* #########Arduino Pin assigning & wire connections##############*/ \
+ Note: Calculatio for FULL STEPPING
+ 1. One full rotation = 32 single steps of stepper motor
+ 2. One Step = 11.25 degree of stepper motor i.e, 32x11.25=360 degree
+ 3. One full rotation of stepper motor shaft (i.e, inclusive of gear set-up) = 2037 steps (63.65 : 1 gear ratio----> 63.65 x 32 = 2036.8 total Steps)
+ 4. One Step of stepper motor = 0.176 degree in the stepper shaft (i.e, 0.176 x 2036.8 = 360 degree)
+
+
+##############################################  Code tested on ARDUINO UNO  ################################################
+
+********************************************************************************************************************************************************/
+
+/* #######  Arduino Pin assigning & wire connections  #######*/
 
        | ULN2003AN          | ARDUINO     | WIRE COLOR
 --------------------------------------------------------------
@@ -31,12 +37,12 @@
 
 5.     | VCC (5-12 VDC )    |    5V       |    -----
 
-6.     | GND                |    GND       |   -----
+6.     | GND                |    GND      |   -----
 
 
 Use External Power supply to power up ULN2003 IC as it draws more current which arduino is not capable to handle
 
---------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 This is purely for beginers and you can modifiy the code with out any prior acknowledgement.
 
